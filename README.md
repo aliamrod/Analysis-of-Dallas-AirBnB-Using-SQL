@@ -21,4 +21,18 @@ The first goal is to create 3 separate CSV files:
 
 
 Here's a basic outline of how I approached web scraping using Python and BeautifulSoup and requests libraries:
+- airbnb_webscraper.py:
 
+  ```python
+import requests
+from bs4 import BeautifulSoup
+import csv
+  ```
+
+`requests` is used to send HTTP requests to the website, `BeautifulSoup` extracts data out of HTML and XML files, and `csv` is the assumed module for reading and writing CSV files.
+
+The class name `_8ssblpx` in the code `soup.find_all('div', class_='_8ssblpx')` is a specific CSS class assigned to certain HTML elements on the Airbnb website. In web development, classes are used to apply styles or identify specific elements using CSS (Cascading Style Sheets) or JavaScript.
+
+In the context of web scraping with BeautifulSoup, the class name is used to target specific HTML elements that have that class assigned. When you inspect the HTML structure of a webpage using browser developer tools, you'll find elements with various classes, IDs, and other attributes.
+
+In the provided code, `soup.find_all('div', class_='_8ssblpx')` is looking for all `div` elements with the class `_8ssblpx`. This is likely done to target a specific section of the Airbnb webpage where listing information is contained. It's important to note that class names like `_8ssblpx` are subject to change if Airbnb updates its website structure, so you may need to inspect the HTML of the specific webpage you are interested in scraping and adjust the class name accordingly.
