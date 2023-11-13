@@ -26,10 +26,10 @@ Here's a basic outline of how I approached web scraping using Python and Beautif
   ```python
 import requests
 from bs4 import BeautifulSoup
-import csv`
+import csv```
   
 
-`requests` is used to send HTTP requests to the website, `BeautifulSoup` extracts data out of HTML and XML files, and `csv` is the assumed module for reading and writing CSV files.
+'requests' is used to send HTTP requests to the website, 'BeautifulSoup' extracts data out of HTML and XML files, and 'csv' is the assumed module for reading and writing CSV files.
 
 The class name `_8ssblpx` in the code `soup.find_all('div', class_='_8ssblpx')` is a specific CSS class assigned to certain HTML elements on the Airbnb website. In web development, classes are used to apply styles or identify specific elements using CSS (Cascading Style Sheets) or JavaScript.
 
