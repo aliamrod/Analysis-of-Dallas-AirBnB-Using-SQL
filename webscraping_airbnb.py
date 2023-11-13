@@ -12,21 +12,20 @@ def scrape_airbnb_listings():
     }
   response = requests.get(url, headers=headers)
   soup = BeautifulSoup(response.content, 'html.parser')
+  
+  # Extract relevant information from webpage
+  # Extracting listing titles...
+  listings = soup.find_all('div', class_ = '_8ssblpx')
+  titles = [listing.find('meta', itemprop = 'name')['content'] for listing in listings]
+  
+  with open('listings.csv', 'w', newline='', encoding='utf-8') as csvfile:
+    fieldnames = ['Title']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    
+    for title in titles:
+        writer.writerow({'Title': title})
 
-# Extract relevant information from webpage
-# Extracting listing titles...
-listings = soup.find_all('div', class_ = '_8ssblpx')
-titles = [listing.find('meta', itemprop = 'name')['content'] for listing in listings]
 
-# Write data to CSV file. 
-with open('listings.csv', 'w', newline='', encoding='utf-8') as csvfile:
-  filednames = ['Title']
-  writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-  writer.writeheader()
-
-  for title in titles:
-    writer.writerow({'Title': title})
-
-# Call the function to scape AirBnB listings.
-    scrape_airbnb_listings()
+scrape_airbnb_listings()
 
