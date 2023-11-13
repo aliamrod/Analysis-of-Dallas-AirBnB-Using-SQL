@@ -23,7 +23,7 @@ The first goal is to create 3 separate CSV files:
 Here's a basic outline of how I approached web scraping using Python and BeautifulSoup and requests libraries:
 - airbnb_webscraper.py:
 
-  ```
+```python
 import requests
 from bs4 import BeautifulSoup
 import csv
