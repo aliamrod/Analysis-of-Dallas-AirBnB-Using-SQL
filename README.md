@@ -26,8 +26,8 @@ Here's a basic outline of how I approached web scraping using Python and Beautif
   ```python
 import requests
 from bs4 import BeautifulSoup
-import csv```
-  ```
+import csv`
+  
 
 `requests` is used to send HTTP requests to the website, `BeautifulSoup` extracts data out of HTML and XML files, and `csv` is the assumed module for reading and writing CSV files.
 
